@@ -1,0 +1,27 @@
+2026-04-22 09:29:29 | INFO     | ============================================================
+2026-04-22 09:29:29 | INFO     | MLOps Batch Job STARTED
+2026-04-22 09:29:29 | INFO     | Input:   data.csv
+2026-04-22 09:29:29 | INFO     | Config:  config.yaml
+2026-04-22 09:29:29 | INFO     | Output:  metrics.json
+2026-04-22 09:29:29 | INFO     | Log:     run.log
+2026-04-22 09:29:29 | INFO     | ============================================================
+2026-04-22 09:29:29 | INFO     | Loading config from: config.yaml
+2026-04-22 09:29:29 | INFO     | Config validated — seed=42, window=5, version=v1
+2026-04-22 09:29:29 | INFO     | Random seed set: 42
+2026-04-22 09:29:29 | INFO     | Loading dataset from: data.csv
+2026-04-22 09:29:29 | INFO     | Dataset loaded — 10000 rows, columns: ['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2026-04-22 09:29:29 | INFO     | Computing rolling mean with window=5
+2026-04-22 09:29:29 | INFO     | Rolling mean computed — 4 rows have NaN (first window-1 rows excluded from signal), 9996 valid rows
+2026-04-22 09:29:29 | INFO     | Generating binary signal (close > rolling_mean → 1, else → 0)
+2026-04-22 09:29:29 | INFO     | Signal generated — 4989 buy signals (1), 5007 hold signals (0) out of 9996 valid rows
+2026-04-22 09:29:29 | INFO     | ------------------------------------------------------------
+2026-04-22 09:29:29 | INFO     | METRICS SUMMARY
+2026-04-22 09:29:29 | INFO     |   version:         v1
+2026-04-22 09:29:29 | INFO     |   rows_processed:  10000
+2026-04-22 09:29:29 | INFO     |   signal_rate:     0.4991
+2026-04-22 09:29:29 | INFO     |   latency_ms:      34
+2026-04-22 09:29:29 | INFO     |   seed:            42
+2026-04-22 09:29:29 | INFO     |   status:          success
+2026-04-22 09:29:29 | INFO     | ------------------------------------------------------------
+2026-04-22 09:29:29 | INFO     | Metrics written to: metrics.json
+2026-04-22 09:29:29 | INFO     | MLOps Batch Job COMPLETED — status: success
